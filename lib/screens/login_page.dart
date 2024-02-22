@@ -15,7 +15,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController profileIDController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,36 +26,63 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(children: [
             SizedBox(height: 50.h),
             const LogoIcon(),
-            SizedBox(height: 150.h),
+            Text("Kirish",style: textStyleHomeTopBold,),
+            SizedBox(height: 50.h),
             SizedBox(
-              height: 38.h,
-              width: 268.w,
-              child: TextField(
-                onSubmitted: (value) {
-                  tab();
-                },
-                keyboardType: TextInputType.number,
-                style: textStyleInputSemiBold,
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 22.w),
-                    hintText: "Profil ID",
-                    hintStyle: textStyleInputSemiBold,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: const Color(0xFF35CE7C), width: 1.w),
+                width: 268.w,
+                child: Column(
+                  children: [
+                    TextField(
+                      onSubmitted: (value) {
+                        tab();
+                      },
+                      style: textStyleInputSemiBold,
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(left: 22.w),
+                          hintText: "Email",
+                          hintStyle: textStyleInputSemiBold,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: const Color(0xFF35CE7C), width: 1.w),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: const Color(0xFF35CE7C), width: 1.w),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15.h)),
+                          filled: true,
+                          fillColor: const Color(0xFFF6FEF7)),
+                      controller: emailController,
+                      textInputAction: TextInputAction.done,
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: const Color(0xFF35CE7C), width: 1.w),
+                    SizedBox(height: 20,),
+                    TextField(
+                      onSubmitted: (value) {
+                        tab();
+                      },
+                      style: textStyleInputSemiBold,
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(left: 22.w),
+                          hintText: "Parol",
+                          hintStyle: textStyleInputSemiBold,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: const Color(0xFF35CE7C), width: 1.w),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: const Color(0xFF35CE7C), width: 1.w),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15.h)),
+                          filled: true,
+                          fillColor: const Color(0xFFF6FEF7)),
+                      controller: passwordController,
+                      textInputAction: TextInputAction.done,
                     ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.h)),
-                    filled: true,
-                    fillColor: const Color(0xFFF6FEF7)),
-                controller: profileIDController,
-                textInputAction: TextInputAction.done,
-              ),
-            ),
+                  ],
+                )),
             SizedBox(height: 100.h),
             PrimaryButton(
               text: "Sign in",
@@ -70,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void tab() {
-    if (profileIDController.text == "1234") {
+    if (true) {
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
