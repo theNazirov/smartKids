@@ -1,11 +1,21 @@
-import 'package:smart_kid/screens/login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'package:smart_kid/services/auth/auth_service.dart';
+import 'package:smart_kid/services/auth/login_or_register.dart';
 import 'package:smart_kid/services/responsive.dart';
 import 'package:smart_kid/widgets/logo_icon.dart';
 import 'package:smart_kid/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(ChangeNotifierProvider(
+    create: (context) => AuthService(),
+    child: const MyApp(),
+  ));
 }
 
 Size size = const Size(0, 0);
@@ -39,13 +49,13 @@ class HomePage extends StatelessWidget {
             const LogoIcon(),
             SizedBox(height: 150.h),
             PrimaryButton(
-              text: "Profil ID",
+              text: "Boshlash",
               width: 130.w,
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) => const LoginOrRegister(),
                     ));
               },
             )

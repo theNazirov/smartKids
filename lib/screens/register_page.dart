@@ -9,26 +9,54 @@ import 'package:smart_kid/widgets/primary_button.dart';
 
 import '../services/auth/auth_service.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
 
-  const LoginPage({required this.onTap, super.key});
+  const RegisterPage({required this.onTap, super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmpasswordController = TextEditingController();
 
-  // sign in user
-  void signIn() async {
-    //get the auth service
-    final authService = Provider.of<AuthService>(context, listen: false);
+// Ro'yxatdan o'tish
+  void signUp() async {
+    if (passwordController.text != confirmpasswordController.text) {
+      showDialog(
+        context: context,
+        builder: (context) => BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5.w, sigmaY: 5.h),
+          child: AlertDialog(
+            surfaceTintColor: Colors.white,
+            title: Text(
+              "Xatolik",
+              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+            ),
+            content: const Text("Parol mos emas"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("OK", style: textStyleInputSemiBold),
+              ),
+            ],
+          ),
+        ),
+      );
+
+      return;
+    }
+    //get auth service
+    final AuthService authService =
+        Provider.of<AuthService>(context, listen: false);
 
     try {
-      await authService.signInWithEmailAndPassword(
+      await authService.signUpWithEmailAndPassword(
           emailController.text, passwordController.text);
     } catch (e) {
       showDialog(
@@ -37,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
           filter: ImageFilter.blur(sigmaX: 5.w, sigmaY: 5.h),
           child: AlertDialog(
             surfaceTintColor: Colors.white,
-            title: Text(
+            title: const Text(
               "Xatolik",
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             ),
@@ -65,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
                 width: 80.w, height: 80.h, child: Image.asset(Constants.logo)),
             SizedBox(height: 30.h),
-            Text("Kirish", style: textStyleHomeTopBold),
+            Text("Ro'yxatdan o'tish", style: textStyleHomeTopBold),
             SizedBox(height: 60.h),
             SizedBox(
                 width: 268.w,
@@ -80,30 +108,35 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.done,
                         hintText: "Parol",
                         textEditingController: passwordController),
+                    SizedBox(height: 20),
+                    CustomTextField(
+                        textInputAction: TextInputAction.done,
+                        hintText: "Parolni takrorlang",
+                        textEditingController: confirmpasswordController),
                   ],
                 )),
             SizedBox(height: 30.h),
             PrimaryButton(
-              text: "Kirish",
-              width: 120.w,
-              onTap: signIn,
+              text: "Ro'yxatdan o'tish",
+              width: 200.w,
+              onTap: signUp,
             ),
             SizedBox(height: 100.h),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("Hali ro'yxatdan o'tmaganmisiz?",
+              child: Text("Allaqachon ro'yxatdan o'tganmisiz?",
                   style: textStyleInputSemiBold),
             ),
             ElevatedButton(
               onPressed: widget.onTap,
               style: ElevatedButton.styleFrom(
-                  fixedSize: Size(200.w, 38.h),
+                  fixedSize: Size(140.w, 38.h),
                   shape: RoundedRectangleBorder(
                       side: BorderSide(color: const Color(0xFF02A858)),
                       borderRadius: BorderRadius.circular(10.h)),
                   backgroundColor: const Color(0xFFF6FEF7),
                   elevation: 0),
-              child: Text("Ro'yxatdan o'tish", style: textStyleInputSemiBold),
+              child: Text("Hozir kirish", style: textStyleInputSemiBold),
             ),
           ]),
         ),
