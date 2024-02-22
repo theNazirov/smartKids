@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "855375103538",
+    "project_id": "smart-kids-c27f9",
+    "storage_bucket": "smart-kids-c27f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855375103538:android:033f017792e94f5c495e2b",
+        "android_client_info": {
+          "package_name": "org.smart.kids.smart_kid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk6NcypYpIU_PY1A5pAeBsR1jyBIsNX0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
