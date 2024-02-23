@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/models/finally.dart';
 import 'package:smart_kid/screens/profile_screen.dart';
 import 'package:smart_kid/screens/settings_screen.dart';
-import 'package:smart_kid/services/responsive.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});

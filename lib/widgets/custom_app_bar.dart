@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/models/finally.dart';
-import 'package:smart_kid/services/responsive.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String titleText;

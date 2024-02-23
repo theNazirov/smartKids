@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_kid/models/finally.dart';
-import 'package:smart_kid/services/responsive.dart';
 import 'package:smart_kid/widgets/custom_text_field.dart';
 import 'package:smart_kid/widgets/primary_button.dart';
 
@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       await authService.signInWithEmailAndPassword(
-          emailController.text, passwordController.text);
+          emailController.text.toString(), passwordController.text.toString());
     } catch (e) {
       showDialog(
         context: context,
@@ -37,11 +37,14 @@ class _LoginPageState extends State<LoginPage> {
           filter: ImageFilter.blur(sigmaX: 5.w, sigmaY: 5.h),
           child: AlertDialog(
             surfaceTintColor: Colors.white,
-            title: const Text(
+            title: Text(
               "Xatolik",
-              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.sp),
             ),
-            content: Text("$e"),
+            content: Text("$e", style: textStyleDrawerListTile),
             actions: [
               TextButton(
                 onPressed: () {
@@ -97,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
             ElevatedButton(
               onPressed: widget.onTap,
               style: ElevatedButton.styleFrom(
-                  fixedSize: Size(200.w, 38.h),
+                  fixedSize: Size(220.w, 38.h),
                   shape: RoundedRectangleBorder(
                       side: const BorderSide(color: Color(0xFF02A858)),
                       borderRadius: BorderRadius.circular(10.h)),

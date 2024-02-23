@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/models/finally.dart';
-import 'package:smart_kid/services/responsive.dart';
 
 class LogoIcon extends StatelessWidget {
   const LogoIcon({super.key});
@@ -19,7 +19,7 @@ class LogoIcon extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             color: const Color(0xFF02A858),
-            fontSize: 44.h,
+            fontSize: 44.sp,
             fontFamily: 'Linotte-Heavy',
             fontWeight: FontWeight.w400,
             height: 0,

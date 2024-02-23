@@ -1,9 +1,10 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_kid/models/finally.dart';
-import 'package:smart_kid/services/responsive.dart';
 import 'package:smart_kid/widgets/custom_text_field.dart';
 import 'package:smart_kid/widgets/primary_button.dart';
 
@@ -32,11 +33,17 @@ class _RegisterPageState extends State<RegisterPage> {
           filter: ImageFilter.blur(sigmaX: 5.w, sigmaY: 5.h),
           child: AlertDialog(
             surfaceTintColor: Colors.white,
-            title: const Text(
+            title:  Text(
               "Xatolik",
-              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.sp),
             ),
-            content: const Text("Parol mos emas"),
+            content: Text(
+              "Parol mos emas",
+              style: textStyleDrawerListTile,
+            ),
             actions: [
               TextButton(
                 onPressed: () {
@@ -118,7 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(height: 30.h),
             PrimaryButton(
               text: "Ro'yxatdan o'tish",
-              width: 200.w,
+              width: 220.w,
               onTap: signUp,
             ),
             SizedBox(height: 100.h),
@@ -130,10 +137,10 @@ class _RegisterPageState extends State<RegisterPage> {
             ElevatedButton(
               onPressed: widget.onTap,
               style: ElevatedButton.styleFrom(
-                  fixedSize: Size(140.w, 38.h),
+                  fixedSize: Size(160.w, 38.h),
                   shape: RoundedRectangleBorder(
                       side: const BorderSide(color: Color(0xFF02A858)),
-                      borderRadius: BorderRadius.circular(10.h)),
+                      borderRadius: BorderRadius.circular(1.h)),
                   backgroundColor: const Color(0xFFF6FEF7),
                   elevation: 0),
               child: Text("Hozir kirish", style: textStyleInputSemiBold),

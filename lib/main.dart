@@ -1,11 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_kid/services/auth/auth_service.dart';
 import 'package:smart_kid/services/auth/login_or_register.dart';
-import 'package:smart_kid/services/responsive.dart';
 import 'package:smart_kid/widgets/logo_icon.dart';
 import 'package:smart_kid/widgets/primary_button.dart';
-import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
 
@@ -18,20 +18,29 @@ void main() async {
   ));
 }
 
-Size size = const Size(0, 0);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    return MaterialApp(
-      theme: ThemeData(
-        splashFactory: InkSplash.splashFactory,
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      // Use builder only if you need to use library outside ScreenUtilInit context
+      builder: (_, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          // You can use the library anywhere in the app even in theme
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+          ),
+          home: child,
+        );
+      },
+      child: const HomePage(),
     );
   }
 }
@@ -50,7 +59,7 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 150.h),
             PrimaryButton(
               text: "Boshlash",
-              width: 130.w,
+              width: 140.w,
               onTap: () {
                 Navigator.push(
                     context,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_kid/services/responsive.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/widgets/add_card.dart';
 import 'package:smart_kid/widgets/custom_app_bar.dart';
 import 'package:smart_kid/widgets/my_drawer.dart';
