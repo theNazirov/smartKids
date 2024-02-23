@@ -33,7 +33,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 124.h,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     color: Color(0xFFCEF8D5),
                     shape: RoundedRectangleBorder(
                       side: BorderSide(width: 1, color: Color(0xFF02A858)),
@@ -44,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width,
                   height: 56.h,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     color: Color(0xFF02A858),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(

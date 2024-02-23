@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: size.width,
             height: 500.h,
             decoration: ShapeDecoration(
-              color: Color(0xFFCEF8D5),
+              color: const Color(0xFFCEF8D5),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30.h),

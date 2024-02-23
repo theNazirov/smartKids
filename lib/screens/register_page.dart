@@ -32,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
           filter: ImageFilter.blur(sigmaX: 5.w, sigmaY: 5.h),
           child: AlertDialog(
             surfaceTintColor: Colors.white,
-            title: Text(
+            title: const Text(
               "Xatolik",
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             ),
@@ -103,12 +103,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         textInputAction: TextInputAction.next,
                         hintText: "Email",
                         textEditingController: emailController),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     CustomTextField(
                         textInputAction: TextInputAction.done,
                         hintText: "Parol",
                         textEditingController: passwordController),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     CustomTextField(
                         textInputAction: TextInputAction.done,
                         hintText: "Parolni takrorlang",
@@ -132,7 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
               style: ElevatedButton.styleFrom(
                   fixedSize: Size(140.w, 38.h),
                   shape: RoundedRectangleBorder(
-                      side: BorderSide(color: const Color(0xFF02A858)),
+                      side: const BorderSide(color: Color(0xFF02A858)),
                       borderRadius: BorderRadius.circular(10.h)),
                   backgroundColor: const Color(0xFFF6FEF7),
                   elevation: 0),
