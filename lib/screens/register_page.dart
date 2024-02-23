@@ -23,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final passwordController = TextEditingController();
   final confirmpasswordController = TextEditingController();
 
-// Ro'yxatdan o'tish
+// Ro'yxatdan o'tish 1
   void signUp() async {
     if (passwordController.text != confirmpasswordController.text) {
       showDialog(
