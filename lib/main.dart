@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:smart_kid/services/auth/auth_gate.dart';
 import 'package:smart_kid/services/auth/auth_service.dart';
 import 'package:smart_kid/services/auth/login_or_register.dart';
 import 'package:smart_kid/widgets/logo_icon.dart';
@@ -28,11 +29,9 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
-      // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
@@ -64,7 +63,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginOrRegister(),
+                      builder: (context) => const AuthGate(),
                     ));
               },
             )

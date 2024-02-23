@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
           filter: ImageFilter.blur(sigmaX: 5.w, sigmaY: 5.h),
           child: AlertDialog(
             surfaceTintColor: Colors.white,
-            title:  Text(
+            title: Text(
               "Xatolik",
               style: TextStyle(
                   color: Colors.red,
@@ -64,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       await authService.signUpWithEmailAndPassword(
-          emailController.text, passwordController.text);
+          emailController.text.toLowerCase(), passwordController.text);
     } catch (e) {
       showDialog(
         context: context,
@@ -76,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
               "Xatolik",
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             ),
-            content: Text("$e"),
+            content: Text("$e", style: textStyleDrawerListTile),
             actions: [
               TextButton(
                 onPressed: () {

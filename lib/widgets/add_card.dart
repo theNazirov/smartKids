@@ -25,7 +25,7 @@ class AddCard extends StatelessWidget {
                 color: const Color(0xFF35CE7C),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(width: 1.w, color: const Color(0xFF02A858)),
-                  borderRadius: BorderRadius.circular(17.h),
+                  borderRadius: BorderRadius.circular(17.r),
                 ),
               ),
               child: Center(
@@ -36,7 +36,7 @@ class AddCard extends StatelessWidget {
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.h),
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                   ),
                   child: Icon(

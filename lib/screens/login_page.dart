@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       await authService.signInWithEmailAndPassword(
-          emailController.text.toString(), passwordController.text.toString());
+          emailController.text.toLowerCase(), passwordController.text);
     } catch (e) {
       showDialog(
         context: context,
