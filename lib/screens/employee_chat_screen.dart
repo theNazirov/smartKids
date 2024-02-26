@@ -121,7 +121,7 @@ class _EmployeeChatScreenState extends State<EmployeeChatScreen> {
     );
   }
 
-//buil send body
+//buil send  body
   Widget _bodySend() {
     return Container(
       color: const Color(0xFF02A858),
