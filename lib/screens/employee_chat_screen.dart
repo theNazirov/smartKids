@@ -78,6 +78,11 @@ class _EmployeeChatScreenState extends State<EmployeeChatScreen> {
           return const Center(child: CircularProgressIndicator());
         }
         return ListView(
+            controller: PageController(
+                initialPage: snapshot.data!.docs
+                    .map((document) => _buildMessageItem(document))
+                    .toList()
+                    .length),
             children: snapshot.data!.docs
                 .map((document) => _buildMessageItem(document))
                 .toList());
