@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/models/finally.dart';
@@ -18,8 +19,7 @@ class SettingsScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar(
-                onTap: () => _scaffoldKey.currentState?.openDrawer()),
+            CustomAppBar(onTap: () => _scaffoldKey.currentState?.openDrawer()),
             Stack(
               alignment: Alignment.bottomCenter,
               children: [
@@ -50,14 +50,20 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 68.h),
-            CustomPrimaryButton("Parolni o‘zgartirish", () {}),
-            SizedBox(height: 20.h),
-            CustomPrimaryButton("Dastur haqida", () {}),
-            SizedBox(height: 20.h),
-            CustomPrimaryButton("Fikr va mulohazalar", () {}),
-            SizedBox(height: 120.h),
-            Image.asset("assets/profile.png")
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 68.h),
+                  CustomPrimaryButton("Parolni o‘zgartirish", () {}),
+                  SizedBox(height: 20.h),
+                  CustomPrimaryButton("Dastur haqida", () {}),
+                  SizedBox(height: 20.h),
+                  CustomPrimaryButton("Fikr va mulohazalar", () {}),
+                  SizedBox(height: 120.h),
+                  Image.asset("assets/profile.png")
+                ],
+              ),
+            )
           ],
         ),
       ),

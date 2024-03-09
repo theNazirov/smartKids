@@ -22,57 +22,69 @@ class _ProfileScreenState extends State<ProfileScreen> {
       key: _scaffoldKey,
       drawer: const MyDrawer(),
       body: SafeArea(
-        child: Column(
-          children: [
-            CustomAppBar(
-                onTap: () => _scaffoldKey.currentState?.openDrawer()),
-            Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 124.h,
-                  decoration: const ShapeDecoration(
-                    color: Color(0xFFCEF8D5),
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 1, color: Color(0xFF02A858)),
-                    ),
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  height: 56.h,
-                  decoration: const ShapeDecoration(
-                    color: Color(0xFF02A858),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
+        child: Expanded(
+          child: Column(
+            children: [
+              CustomAppBar(
+                  onTap: () => _scaffoldKey.currentState?.openDrawer()),
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 124.h,
+                    decoration: const ShapeDecoration(
+                      color: Color(0xFFCEF8D5),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1, color: Color(0xFF02A858)),
                       ),
                     ),
                   ),
-                  child: Text('Sozlamalar', style: textStyleScreenTopTitle),
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    height: 56.h,
+                    decoration: const ShapeDecoration(
+                      color: Color(0xFF02A858),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                        ),
+                      ),
+                    ),
+                    child: Text('Sozlamalar', style: textStyleScreenTopTitle),
+                  ),
+                ],
+              ),
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 30.h),
+                    CustomPrimaryButton("Ism", () {}),
+                    SizedBox(height: 18.h),
+                    CustomPrimaryButton("Familyasi", () {}),
+                    SizedBox(height: 18.h),
+                    CustomPrimaryButton("Sharifi", () {}),
+                    SizedBox(height: 18.h),
+                    CustomPrimaryButton("Pasport raqami", () {}),
+                    SizedBox(height: 18.h),
+                    CustomPrimaryButton("Telefon raqami", () {}),
+                    SizedBox(height: 18.h),
+                    CustomPrimaryButton("Login", () {}),
+                    SizedBox(height: 18.h),
+                    Image.asset("assets/profile.png"),
+                    SizedBox(height: 10.h),
+                    PrimaryButton(
+                      text: "O'zgartirish",
+                      onTap: () {},
+                      width: 150.w,
+                    )
+                  ],
                 ),
-              ],
-            ),
-            SizedBox(height: 30.h),
-            CustomPrimaryButton("Ism", () {}),
-            SizedBox(height: 18.h),
-            CustomPrimaryButton("Familyasi", () {}),
-            SizedBox(height: 18.h),
-            CustomPrimaryButton("Sharifi", () {}),
-            SizedBox(height: 18.h),
-            CustomPrimaryButton("Pasport raqami", () {}),
-            SizedBox(height: 18.h),
-            CustomPrimaryButton("Telefon raqami", () {}),
-            SizedBox(height: 18.h),
-            CustomPrimaryButton("Login", () {}),
-            SizedBox(height: 18.h),
-            Image.asset("assets/profile.png"),
-            SizedBox(height: 10.h),
-            PrimaryButton(text: "O'zgartirish", onTap: (){},width: 150.w,)
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

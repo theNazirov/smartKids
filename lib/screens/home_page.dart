@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
           drawer: const MyDrawer(),
           body: SafeArea(
               child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomAppBar(
                   onTap: () => _scaffoldKey.currentState?.openDrawer()),
