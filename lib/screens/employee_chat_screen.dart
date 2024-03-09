@@ -46,7 +46,6 @@ class _EmployeeChatScreenState extends State<EmployeeChatScreen> {
           child: Column(
         children: [
           CustomAppBar(
-            titleText: "Ism familyasi",
             onTap: () => Navigator.pop(context),
           ),
           Container(

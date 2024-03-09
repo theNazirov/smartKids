@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_kid/home_page.dart';
+import 'package:smart_kid/widgets/user_chat_list.dart';
 
 import '../models/finally.dart';
 import '../widgets/custom_app_bar.dart';
@@ -20,7 +20,6 @@ class ChatSelectPage extends StatelessWidget {
         child: Column(
           children: [
             CustomAppBar(
-                titleText: "Ism famiyadsi",
                 onTap: () => _scaffoldKey.currentState?.openDrawer()),
             Stack(
               alignment: Alignment.bottomCenter,

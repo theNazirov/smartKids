@@ -20,12 +20,14 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
+  final fullNameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmpasswordController = TextEditingController();
 
 // Ro'yxatdan o'tish
   void signUp() async {
-    if (passwordController.text != confirmpasswordController.text) {
+    if (passwordController.text.trim() !=
+        confirmpasswordController.text.trim()) {
       showDialog(
         context: context,
         builder: (context) => BackdropFilter(
@@ -63,7 +65,9 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       await authService.signUpWithEmailAndPassword(
-          emailController.text.toLowerCase(), passwordController.text);
+          fullNameController.text.trim(),
+          emailController.text.toLowerCase().trim(),
+          passwordController.text.trim());
     } catch (e) {
       showDialog(
         context: context,
@@ -105,6 +109,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: 268.w,
                 child: Column(
                   children: [
+                    CustomTextField(
+                        textInputAction: TextInputAction.next,
+                        hintText: "F.I.O",
+                        textEditingController: fullNameController),
+                    const SizedBox(height: 20),
                     CustomTextField(
                         textInputAction: TextInputAction.next,
                         hintText: "Email",

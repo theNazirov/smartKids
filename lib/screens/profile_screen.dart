@@ -25,7 +25,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             CustomAppBar(
-                titleText: "Ism famiyadsi",
                 onTap: () => _scaffoldKey.currentState?.openDrawer()),
             Stack(
               alignment: Alignment.bottomCenter,

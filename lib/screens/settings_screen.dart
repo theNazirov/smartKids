@@ -19,7 +19,6 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           children: [
             CustomAppBar(
-                titleText: "Ism famiyadsi",
                 onTap: () => _scaffoldKey.currentState?.openDrawer()),
             Stack(
               alignment: Alignment.bottomCenter,
