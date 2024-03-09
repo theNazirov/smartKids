@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/home_page.dart';
-import 'package:smart_kid/screens/employee_chat_screen.dart';
 
 import '../models/finally.dart';
 import '../widgets/custom_app_bar.dart';
-import '../widgets/custom_primary_button.dart';
 import '../widgets/my_drawer.dart';
 
 class ChatSelectPage extends StatelessWidget {
@@ -55,7 +52,7 @@ class ChatSelectPage extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(child: HomePage())
+            const Expanded(child: HomePage())
             // SizedBox(height: 68.h),
             // CustomPrimaryButton("Hodimlar bilan muloqot", () {
             //   Navigator.push(

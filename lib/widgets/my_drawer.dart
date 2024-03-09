@@ -159,7 +159,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AuthGate(),
+                              builder: (context) => const AuthGate(),
                             ),
                             (route) => false);
                       },

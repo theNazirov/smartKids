@@ -8,15 +8,15 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextInputAction textInputAction;
 
-  const CustomTextField(
-      {required this.textInputAction,
-      required this.hintText,
-      required this.textEditingController,
-      super.key});
+  const CustomTextField({required this.textInputAction,
+    required this.hintText,
+    required this.textEditingController,
+    super.key});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: 1,
       style: textStyleInputSemiBold,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.only(left: 22.w),

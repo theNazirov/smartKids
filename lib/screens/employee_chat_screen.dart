@@ -13,7 +13,7 @@ class EmployeeChatScreen extends StatefulWidget {
   final receiveUserEmail;
   final receiveUserID;
 
-  EmployeeChatScreen(
+  const EmployeeChatScreen(
       {super.key, required this.receiveUserEmail, required this.receiveUserID});
 
   @override
