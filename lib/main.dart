@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_kid/services/auth/auth_gate.dart';
 import 'package:smart_kid/services/auth/auth_service.dart';
+import 'package:smart_kid/services/auth/encapsulation.dart';
 import 'package:smart_kid/widgets/logo_icon.dart';
 import 'package:smart_kid/widgets/primary_button.dart';
 
@@ -13,8 +14,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => AuthService(),
+    MultiProvider(
+      providers: [
+        Provider<AuthService>(
+          create: (context) => AuthService(),
+        ),
+        Provider<Encapsulation>(
+          create: (context) => Encapsulation(),
+        )
+      ],
       child: const MyApp(),
     ),
   );

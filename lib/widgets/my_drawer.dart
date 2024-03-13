@@ -52,7 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
                               height: 63.h,
                               decoration: const ShapeDecoration(
                                 color: Colors.white,
-                                shape: OvalBorder(),
+                                shape: CircleBorder(),
                               ),
                               child: Image.asset("assets/avatar_icon.png")),
                           Text("Ism familyasi", style: textStyleAppbarTitle)
