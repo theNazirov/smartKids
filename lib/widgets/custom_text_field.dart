@@ -16,6 +16,8 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      showCursor: true,
+      autofocus: true,
       maxLines: 1,
       style: textStyleInputSemiBold,
       decoration: InputDecoration(

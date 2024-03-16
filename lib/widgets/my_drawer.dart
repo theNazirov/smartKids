@@ -6,8 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_kid/models/finally.dart';
 import 'package:smart_kid/screens/chat_select_page.dart';
+import 'package:smart_kid/screens/home_page.dart';
 import 'package:smart_kid/screens/profile_screen.dart';
 import 'package:smart_kid/screens/settings_screen.dart';
+import 'package:smart_kid/screens/tinder_page.dart';
 import 'package:smart_kid/services/auth/auth_gate.dart';
 import 'package:smart_kid/services/auth/auth_service.dart';
 
@@ -80,6 +82,18 @@ class _MyDrawerState extends State<MyDrawer> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
+                  builder: (context) => const MyHomePage(),
+                ));
+          },
+          child: ListTile(
+              leading: const Icon(Icons.home),
+              title: Text('Asosiy sahifa', style: textStyleDrawerListTile)),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
                   builder: (context) => const ProfileScreen(),
                 ));
           },
@@ -100,7 +114,13 @@ class _MyDrawerState extends State<MyDrawer> {
               title: Text('Muloqot', style: textStyleDrawerListTile)),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const TinderScreen(),
+                ));
+          },
           child: ListTile(
               leading: const Icon(Icons.menu_book),
               title: Text("Ta'lim", style: textStyleDrawerListTile)),
