@@ -2,9 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:smart_kid/services/auth/auth_gate.dart';
+import 'package:smart_kid/services/login_register/auth_gate.dart';
 import 'package:smart_kid/services/auth/auth_service.dart';
-import 'package:smart_kid/services/auth/encapsulation.dart';
+import 'package:smart_kid/services/encapsulation.dart';
 import 'package:smart_kid/widgets/logo_icon.dart';
 import 'package:smart_kid/widgets/primary_button.dart';
 

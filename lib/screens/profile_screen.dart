@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_kid/generated/assets.dart';
 import 'package:smart_kid/models/finally.dart';
 import 'package:smart_kid/widgets/custom_app_bar.dart';
 import 'package:smart_kid/widgets/custom_primary_button.dart';
@@ -57,31 +58,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(height: 30.h),
-                    CustomPrimaryButton("Ism", () {}),
-                    SizedBox(height: 18.h),
-                    CustomPrimaryButton("Familyasi", () {}),
-                    SizedBox(height: 18.h),
-                    CustomPrimaryButton("Sharifi", () {}),
-                    SizedBox(height: 18.h),
-                    CustomPrimaryButton("Pasport raqami", () {}),
-                    SizedBox(height: 18.h),
-                    CustomPrimaryButton("Telefon raqami", () {}),
-                    SizedBox(height: 18.h),
-                    CustomPrimaryButton("Login", () {}),
-                    SizedBox(height: 18.h),
-                    Image.asset("assets/profile.png"),
-                    SizedBox(height: 10.h),
-                    PrimaryButton(
-                      text: "O'zgartirish",
-                      onTap: () {},
-                      width: 150.w,
-                    )
-                  ],
-                ),
+              Column(
+                children: [
+                  SizedBox(height: 10.h),
+                  Image.asset(Assets.assetsProfile),
+                  SizedBox(height: 10.h),
+                  CustomPrimaryButton("Ism", () {}),
+                  SizedBox(height: 14.h),
+                  CustomPrimaryButton("Familyasi", () {}),
+                  SizedBox(height: 14.h),
+                  CustomPrimaryButton("Sharifi", () {}),
+                  SizedBox(height: 14.h),
+                  CustomPrimaryButton("Pasport raqami", () {}),
+                  SizedBox(height: 14.h),
+                  CustomPrimaryButton("Telefon raqami", () {}),
+                  SizedBox(height: 14.h),
+                  CustomPrimaryButton("Login", () {}),
+                  SizedBox(height: 14.h),
+                  PrimaryButton(
+                    text: "O'zgartirish",
+                    onTap: () {},
+                    width: 160.w,
+                  )
+                ],
               )
             ],
           ),

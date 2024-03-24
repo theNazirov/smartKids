@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_kid/generated/assets.dart';
 import 'package:smart_kid/models/finally.dart';
 import 'package:smart_kid/widgets/custom_app_bar.dart';
 import 'package:smart_kid/widgets/custom_primary_button.dart';
@@ -52,14 +53,15 @@ class SettingsScreen extends StatelessWidget {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: 68.h),
+                  SizedBox(height: 18.h),
+                  Image.asset(Assets.assetsProfile),
+                  SizedBox(height: 48.h),
                   CustomPrimaryButton("Parolni o‘zgartirish", () {}),
                   SizedBox(height: 20.h),
                   CustomPrimaryButton("Dastur haqida", () {}),
                   SizedBox(height: 20.h),
                   CustomPrimaryButton("Fikr va mulohazalar", () {}),
                   SizedBox(height: 120.h),
-                  Image.asset("assets/profile.png")
                 ],
               ),
             )

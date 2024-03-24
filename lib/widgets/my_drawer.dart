@@ -4,13 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:smart_kid/generated/assets.dart';
 import 'package:smart_kid/models/finally.dart';
 import 'package:smart_kid/screens/chat_select_page.dart';
 import 'package:smart_kid/screens/home_page.dart';
 import 'package:smart_kid/screens/profile_screen.dart';
 import 'package:smart_kid/screens/settings_screen.dart';
 import 'package:smart_kid/screens/tinder_page.dart';
-import 'package:smart_kid/services/auth/auth_gate.dart';
+import 'package:smart_kid/services/login_register/auth_gate.dart';
 import 'package:smart_kid/services/auth/auth_service.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -56,7 +57,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                 color: Colors.white,
                                 shape: CircleBorder(),
                               ),
-                              child: Image.asset("assets/avatar_icon.png")),
+                              child: Image.asset(Assets.assetsAvatarIcon)),
                           Text("Ism familyasi", style: textStyleAppbarTitle)
                         ]),
                     Column(
@@ -69,7 +70,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             color: Colors.white,
                             shape: OvalBorder(),
                           ),
-                          child: Image.asset("assets/dark_mode_moon.png"),
+                          child: Image.asset(Assets.assetsDarkModeMoon),
                         )
                       ],
                     )

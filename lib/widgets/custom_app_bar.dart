@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid/models/finally.dart';
 
+import '../generated/assets.dart';
+
 class CustomAppBar extends StatelessWidget {
   final VoidCallback onTap;
 
@@ -11,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size  = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Column(children: [
       Container(
           width: size.width,
@@ -30,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
               onTap: () => onTap(),
               child: Container(
                 padding: const EdgeInsets.only(left: 14),
-                child: Image.asset("assets/drawer_logo.png"),
+                child: Image.asset(Assets.assetsDrawerLogo),
               ),
             ),
             Container(
